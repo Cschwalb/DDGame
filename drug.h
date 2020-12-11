@@ -12,8 +12,15 @@ private:
     std::string m_sDrugName;
     int m_nCount;
 public:
+    enum class drugNames {
+        weed = 0,
+        cocaine = 1,
+        ecstacy = 2,
+        oxy = 3,
+        heroin = 4
+    };
     drug();
-    drug(const std::string &, double cost, int nCount);
+    drug(drugNames &, double cost, int nCount);
     double getCost();
     std::string getName();
     double generateAndSetPrice();
@@ -25,6 +32,10 @@ public:
             return false;
     };
     int getCount();
+
+
+
+    };
 };
 
 

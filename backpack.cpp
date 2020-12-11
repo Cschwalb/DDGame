@@ -2,6 +2,7 @@
 // Created by thepu on 12/7/2020.
 //
 
+#include <sstream>
 #include "backpack.h"
 
 backpack::backpack() {
@@ -16,27 +17,34 @@ std::list<drug> backpack::getBackpack() {
     return this->m_lDrugs;
 }
 
-void printDrug(drug d)
-{
-    std::cout<<"Drug in backpack: " << d.getName() << std::endl;
-}
-
 std::string backpack::listContents() {
-    std::for_each(this->m_lDrugs.begin(), this->m_lDrugs.end(), printDrug);
+    std::string sBackpack = "Backpack Contents";
+    auto s = std::stringstream();
+    for( drug d : this->m_lDrugs)
+    {
+        s<<"Drug in backpack: " << d.getName() << std::endl;
+    }
+    return s.str();
 }
 
-bool backpack::addDrug(drug d) {
-    this->m_lDrugs.push_front(d);
+bool backpack::addDrug(drug *d) {
+    this->m_lDrugs.push_front(*d);
     return true;
 }
 
 bool backpack::removeDrug(drug d) {
-
+    for( drug item : this->m_lDrugs)
+    {
+        if(item.operator==(d)) {
+            this->m_lDrugs.remove(d);
+            return true;
+        }
+    }
     return false;
 }
 
 bool backpack::drugExists(drug d) {
-    for(const drug D : this->m_lDrugs)
+    for( drug D : this->m_lDrugs)
     {
         if(d.operator==(D))
             return true;
@@ -45,7 +53,10 @@ bool backpack::drugExists(drug d) {
 }
 
 int backpack::numberOfDrug(drug d) {
-    for(const drug D : this->m_lDrugs)
-        if(d.operator==(D))
+    for( drug D : this->m_lDrugs) {
+        if (d.operator==(D))
             return d.getCount();
+    }
+    return 0;
+
 }

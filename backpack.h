@@ -16,7 +16,7 @@ public:
     backpack(std::list<drug> lst);
     std::list<drug> getBackpack();
     std::string listContents();
-    bool addDrug(drug d);
+    bool addDrug(drug *d);
     bool removeDrug(drug d);
     bool drugExists(drug d);
     int numberOfDrug(drug d);

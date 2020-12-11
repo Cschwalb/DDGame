@@ -28,7 +28,9 @@ std::string drug::getName() {
 double drug::generateAndSetPrice() {
     double nCostStart = this->getCost();
     int delta = rand() % static_cast<int>(this->m_dCost);
-    std::cout<< delta<< std::endl;
+    if(delta %2 == 0)
+        delta *=-1;
+    std::cout<<delta<< std::endl;
     this->m_dCost += delta;
     return delta; // returns change
 }
