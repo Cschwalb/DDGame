@@ -9,10 +9,11 @@ drug::drug() {
     this->m_sDrugName = "weed";
     this->m_dCost = 20.00;
     this->m_nCount = 1;
+    this->m_eDrugName = drugNames::weed;
 }
 
-drug::drug(const std::string & sName, double cost, int nCount) {
-    this->m_sDrugName = sName;
+drug::drug(drug::drugNames enu, double cost, int nCount) {
+    this->m_eDrugName = enu;
     this->m_dCost = cost;
     this->m_nCount = nCount;
 }
@@ -22,7 +23,19 @@ double drug::getCost() {
 }
 
 std::string drug::getName() {
-    return this->m_sDrugName;
+    std::string sReturn;
+   if(this->m_eDrugName == drugNames::weed)
+       sReturn = "Weed";
+   else if(this->m_eDrugName == drugNames::cocaine)
+       sReturn = "Cocaine";
+   else if(this->m_eDrugName == drugNames::ecstacy)
+       sReturn = "Ecstacy";
+   else if(this->m_eDrugName == drugNames::heroin)
+       sReturn = "Heroin";
+   else if(this->m_eDrugName == drugNames::oxy)
+       sReturn = "Oxycodone";
+   this->m_sDrugName = sReturn;
+   return this->m_sDrugName;
 }
 
 double drug::generateAndSetPrice() {
@@ -38,3 +51,6 @@ double drug::generateAndSetPrice() {
 int drug::getCount() {
     return this->m_nCount;
 }
+
+
+

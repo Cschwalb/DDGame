@@ -6,11 +6,14 @@
 #include "backpack.h"
 
 backpack::backpack() {
-    this->m_lDrugs.push_front(drug("Weed", 25, 1)); // start with a gram.
+    this->m_lDrugs.push_front(drug(drug::drugNames::weed, 25, 1)); // start with a gram.
 }
 
-backpack::backpack(std::list<drug> lst) {
-    this->m_lDrugs = lst;
+backpack::backpack(std::list<drug> lst, std::list<drug> mLDrugs) : m_lDrugs(mLDrugs) {
+    for(drug item : lst)
+    {
+        this->m_lDrugs.push_front(item);
+    }
 }
 
 std::list<drug> backpack::getBackpack() {
