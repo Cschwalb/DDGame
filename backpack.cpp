@@ -9,7 +9,7 @@ backpack::backpack() {
     this->m_lDrugs.push_front(drug(drug::drugNames::weed, 25, 1)); // start with a gram.
 }
 
-backpack::backpack(std::list<drug> lst, std::list<drug> mLDrugs) : m_lDrugs(mLDrugs) {
+backpack::backpack(std::list<drug> lst) {
     for(drug item : lst)
     {
         this->m_lDrugs.push_front(item);
