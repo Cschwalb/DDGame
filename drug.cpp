@@ -52,5 +52,9 @@ int drug::getCount() {
     return this->m_nCount;
 }
 
+void drug::setCost(double cost) {
+    this->m_dCost = cost;
+}
+
 
 

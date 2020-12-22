@@ -10,7 +10,7 @@
 
 class backpack {
     std::list<drug> m_lDrugs;
-
+    float m_fCash;
 public:
     backpack();
     backpack(std::list<drug> lst);
@@ -20,6 +20,8 @@ public:
     bool removeDrug(drug d);
     bool drugExists(drug d);
     int numberOfDrug(drug d);
+    void addCash(float delta);
+    float getBalance();
 };
 
 

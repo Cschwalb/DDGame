@@ -35,8 +35,7 @@ public:
             return false;
     };
     int getCount();
-
-
+    void setCost(double cost);
 
 };
 

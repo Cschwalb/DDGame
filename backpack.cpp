@@ -21,11 +21,14 @@ std::list<drug> backpack::getBackpack() {
 }
 
 std::string backpack::listContents() {
+    std::cout<<std::endl;
     std::string sBackpack = "Backpack Contents";
     auto s = std::stringstream();
+
     for( drug d : this->m_lDrugs)
     {
         s<<"Drug in backpack: " << d.getName() << std::endl;
+        s<<"Cost of drug:  : "<< d.getCost() << std::endl;
     }
     return s.str();
 }
@@ -62,4 +65,12 @@ int backpack::numberOfDrug(drug d) {
     }
     return 0;
 
+}
+
+void backpack::addCash(float delta) {
+    this->m_fCash += delta;
+}
+
+float backpack::getBalance() {
+    return this->m_fCash;
 }
