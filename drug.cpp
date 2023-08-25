@@ -12,6 +12,15 @@ drug::drug() {
     this->m_eDrugName = drugNames::weed;
 }
 
+drug::drug(const drug& drug1)
+{
+    this->m_sDrugName = drug1.m_sDrugName;
+    this->m_dCost = drug1.m_dCost;
+    this->m_nCount = drug1.m_nCount;
+    this->m_eDrugName = drug1.m_eDrugName;
+}
+
+
 drug::drug(drug::drugNames enu, double cost, int nCount) {
     this->m_eDrugName = enu;
     this->m_dCost = cost;

@@ -24,7 +24,6 @@ std::string backpack::listContents() {
     std::cout<<std::endl;
     std::string sBackpack = "Backpack Contents";
     auto s = std::stringstream();
-
     for( drug d : this->m_lDrugs)
     {
         s<<"Drug in backpack: " << d.getName() << std::endl;
@@ -42,7 +41,9 @@ bool backpack::removeDrug(drug d) {
     for( drug item : this->m_lDrugs)
     {
         if(item.operator==(d)) {
-            this->m_lDrugs.remove(d);
+            const drug delta = drug(d);
+
+            this->m_lDrugs.remove(item);
             return true;
         }
     }

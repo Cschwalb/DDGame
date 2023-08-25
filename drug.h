@@ -23,16 +23,36 @@ private:
     drugNames m_eDrugName;
 public:
     drug();
+    drug(const drug& drug1);
     drug(drugNames, double cost, int nCount);
     double getCost();
     std::string getName();
     double generateAndSetPrice();
-    inline bool operator==(drug drug1)
+    inline bool operator==(drug &drug1)
     {
         if(this->m_eDrugName == drug1.m_eDrugName)
             return true;
         else
             return false;
+    };
+    inline bool operator!=(drug &drug1)
+    {
+        if(this->m_eDrugName != drug1.m_eDrugName)
+            return true;
+        else
+            return false;
+    };
+    bool operator == (const drug& d) const
+    {
+      if(this->m_eDrugName == d.m_eDrugName)
+          return true;
+      else
+          return false;
+    };
+
+    bool operator != (const drug& d) const
+    {
+        return !operator==(d);
     };
     int getCount();
     void setCost(double cost);

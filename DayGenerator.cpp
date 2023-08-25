@@ -17,7 +17,7 @@ void DayGenerator::generateDrugPrice(drug d) {
     {
         d.setCost(d.getCost() - oldCost);
     }
-    std::cout<<d.getCost()<<"Cost recently"<<std::endl;
+    std::cout<<"Cost recently:  " <<d.getCost()<<std::endl;
 }
 
 DayGenerator::DayGenerator() {

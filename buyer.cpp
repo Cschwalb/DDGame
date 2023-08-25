@@ -24,13 +24,14 @@ bool buyer::sellDrug(drug d, backpack b) {
     if(b.getBalance() > d.getCost())
     {
         b.addDrug(&d);
-        b.addCash((-1)*d.getCost()); // negative amt.
+        b.addCash((-1.0)*d.getCost()); // negative amt.
         return true;
     }
     return false;
 }
 
 bool buyer::buying(drug d) {
+
     return true;
 }
 
