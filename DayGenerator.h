@@ -11,13 +11,15 @@
 class DayGenerator {
 private:
     int nCountOfDay;
-    std::vector<drug, int>drugType();
-    std::vector<drug::drugNames, float>DrugCost();
+    std::vector<std::pair<drug,int> > drugBag;
+    std::vector<drug::drugNames, float> *DrugCost;
+
 
 public:
     DayGenerator();
     void generateDrugPrice(drug d);
     void fluctuateBackpack(backpack b);
+    void generateDayOfDrugs();
 };
 
 

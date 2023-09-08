@@ -32,3 +32,25 @@ void DayGenerator::fluctuateBackpack(backpack b) {
         generateDrugPrice(d);
     }
 }
+
+drug getDrugType()
+{
+
+    int randomX = rand() % 4;
+    std::cout<<randomX<<std::endl;
+    for(int x = 0; x <= randomX; x ++)
+    {
+        if( randomX == 0)
+        {
+            return ;
+        }
+    }
+}
+
+void DayGenerator::generateDayOfDrugs() {
+
+    for(auto x: this->drugBag)
+    {
+        
+    }
+}

@@ -10,11 +10,11 @@ class drug {
 
 public:
     enum class drugNames {
-        weed = -1,
-        cocaine = 0,
-        ecstacy = 1,
-        oxy = 2,
-        heroin = 3
+        weed = 0,
+        cocaine = 1,
+        ecstacy = 2,
+        oxy = 3,
+        heroin = 4
     };
 private:
     double m_dCost;
@@ -23,6 +23,8 @@ private:
     drugNames m_eDrugName;
 public:
     drug();
+    drug(enum class drugNames e);
+    drug(int drug);
     drug(const drug& drug1);
     drug(drugNames, double cost, int nCount);
     double getCost();
